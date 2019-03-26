@@ -17,7 +17,7 @@ body {
     background-color: #F5F5F5;
 }
 
-/* #4 # sweat #uppercase buttons and w3w locations */
+/* uppercase buttons */
 button, strong {
     text-transform: uppercase;
 }
@@ -26,21 +26,36 @@ button, strong {
 
 /* APP BAR */
 
-/* #4 #sweat address both #app-bar s */
+/*both bars*/
 h1 {
     background-color: #3F51B5;
     color: white;
+
+    height: 64px;
+    font-weight: 500;
+    padding: 24px 16px 20px 16px;
+
+    box-sizing: border-box;
+    font-size:20px;
+    position: relative;
 }
+
 
 
 /* CHANNELS LIST */
 
-/* #4 #sweat #channels */
+
 ul {
     /* #3 #channels #list modifies h2 to ul */
     background-color: white;
     /* #3 #channels #bullets removed */
     list-style-type: none;
+
+    position: absolute;
+    width: 100%;
+    top: 64px; 
+    bottom: 72px; 
+    overflow-y: auto; /* scroll bar */
 }
 
 li {
@@ -66,24 +81,66 @@ li img {
 
 /* TAB BAR */
 
-/* #4 #sweat #tab-bar */
-#tab-bar {
-    /* #3 #tab-bar #container should be white */
+#tab-bar, #chat-bar {
     background-color: white;
-    /* #3 #tab-bar #container has all buttons centered */
     text-align: center;
+    position: fixed;
+
+    bottom: 0px;
+     /*tab bar buttons spread evenly*/
+    display: flex;
+    justify-content: space-evenly;
+
+    width: 40%;
+    height: 72px;
 }
 
-/* #4 add styles to #tab-bar #buttons */
-#tab-bar button {
+/*CHAT BAR */
+
+#chat-bar {
+    width: 60%;
+    text-align: left;
+    display: initial;
+    position: fixed;
+    left: 40%;  
+}
+
+#emojis {
+    
+    background-color:white;
+    border: 1px solid black;
+
+    /* size & alignment */
+    position: absolute;
+    box-sizing: border-box;
+    height: 300px;
+    width: 300px;
+    left: 16px;
+    top: -284px;
+    padding: 16px;
+
+    /* font and left-align text */
+    text-align: left;
+    font-size: 28px;
+
+    /* scroll */
+    overflow-y: auto;
+}
+
+
+#tab-bar button, #chat-bar button {
     background-color: white;
     border: none;
     font-size: 13px;
 
-    /* #4 #tab-bar buttons have a width of #one-third of the available space */
     width: 33%;
     height: 72px;
     padding: 16px;
+    border: none;
+}
+
+#chat-bar button {
+    width: auto;
 }
 
 /* #4 #tab-bar buttons do have a #line-break and images are centered due to the left&right auto margin */
@@ -110,11 +167,16 @@ li img {
 
     /* #4 #message distance to next message container*/
     margin-bottom: 8px;
+
+    position: relative;
 }
 
 
 .message h3 {
     font-size: medium;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
 }
 
 .message h3 em {
@@ -136,6 +198,9 @@ li img {
     background-color: #CDDC39;
     color: black;
     text-transform: uppercase;
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
 }
 
 /* #4 left align own #messages using #margins */
@@ -143,3 +208,45 @@ li img {
     margin-left: 17.5%;
 }
 
+/*LAYOUT*/
+
+#channels {
+    position:absolute;
+    background-color: white;
+    height: 100%;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    width: 40%;
+}
+/*indentation of chatterapp headline*/
+#channels h1 {
+    padding-left: 72px;
+}
+
+#chat {
+    position: absolute;
+    height: 100%;
+    left: 40%;
+    width: 60%;
+}
+/* position of moocus image in app-bar*/
+#moocus {
+    position: absolute;
+    left: 24px;
+    bottom: 0px;
+}
+/* right arrows in channel area*/
+li .channel-meta {
+    vertical-align: middle;
+    position: absolute;
+    right: 16px;
+}
+
+#messages {
+    position: absolute;
+    width: 100%;
+    top: 64px;
+    bottom: 72px;
+    overflow-y: auto;
+}
