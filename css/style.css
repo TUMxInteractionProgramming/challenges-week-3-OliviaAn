@@ -1,4 +1,4 @@
-/* #4 #sweat #external css file */
+ /* #4 #sweat #external css file */
 
 /* GLOBAL */
 
@@ -125,6 +125,8 @@ li img {
 
     /* scroll */
     overflow-y: auto;
+
+    display: none; /*emojis hidden onload*/
 }
 
 
@@ -222,6 +224,15 @@ li img {
 /*indentation of chatterapp headline*/
 #channels h1 {
     padding-left: 72px;
+}
+/*link color of channel location*/
+h1 a {
+    color:white;
+}
+
+h1 #channel-star{
+position:absolute;
+    right: 16px;
 }
 
 #chat {
